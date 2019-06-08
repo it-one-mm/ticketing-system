@@ -6,7 +6,7 @@
 
     <div class="row">
         <div class="col">
-            <h1>List of Ticket</h1>
+            <h1>All Tickets</h1>
             <hr>
 
             @if(session('secondary'))
