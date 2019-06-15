@@ -26,7 +26,7 @@
                     </div>
                 @endif
 
-                {{ Form::model($ticket, ['route' => ['tickets.update', $ticket->slug]]) }}
+                {{ Form::model($ticket, ['route' => ['admin.tickets.update', $ticket->slug]]) }}
                     @method('put')
 
                     <div class="form-group">
@@ -44,7 +44,7 @@
                         {{ Form::label('status', 'Close this ticket?', ['class' => 'form-check-label']) }}
                     </div>
 
-                    <a href="{{ route('tickets.show', $ticket->slug) }}" class="btn btn-secondary">Cancel</a>
+                    <a href="{{ route('admin.tickets.show', $ticket->slug) }}" class="btn btn-secondary">Cancel</a>
 
                     {{ Form::submit('Submit', ['class' => 'btn btn-primary']) }}
 

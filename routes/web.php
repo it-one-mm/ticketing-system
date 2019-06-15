@@ -26,6 +26,11 @@ Route::get('users/logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/contact', 'TicketsController@create')->name('tickets.create');
 Route::post('/contact', 'TicketsController@store')->name('tickets.store');
 
+Route::post('/comment', 'CommentsController@newComment');
+
+Route::get('/blog', 'BlogController@index');
+Route::get('/blog/{slug?}', 'BlogController@show');
+
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'middleware' => ['manager']], function() {
     Route::view('/', 'backend.index');
     // Ticket Route
@@ -47,6 +52,16 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
         Route::get('users/{id?}/edit', 'UsersController@edit')->name('edit');
         Route::post('users/{id?}/edit','UsersController@update')->name('update');
     });
+
+    Route::get('categories', 'CategoriesController@index');
+    Route::get('categories/create', 'CategoriesController@create');
+    Route::post('categories/create', 'CategoriesController@store');
+
+    Route::get('posts', 'PostsController@index');
+    Route::get('posts/create', 'PostsController@create');
+    Route::post('posts/create', 'PostsController@store');
+    Route::get('posts/{id?}/edit', 'PostsController@edit');
+    Route::post('posts/{id?}/edit','PostsController@update');
 
 
 });

@@ -27,7 +27,7 @@
                 <tbody>
                     @foreach( $tickets as $ticket )
                         <tr>
-                            <td><a href="{{ route('tickets.show', [$ticket->slug]) }}">{{ $ticket->title }}</a></td>
+                            <td><a href="{{ route('admin.tickets.show', [$ticket->slug]) }}">{{ $ticket->title }}</a></td>
                             <td>{{ $ticket->content }}</td>
                             <td>{{ $ticket->slug }}</td>
                         </tr>

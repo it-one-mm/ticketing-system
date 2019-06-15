@@ -11,6 +11,9 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
+                <li class="nav-item {{ Request::is('blog') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ url('blog') }}">Blog</a>
+                </li>
                 <li class="nav-item {{ Request::is('about') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ url('about') }}">About</a>
                 </li>

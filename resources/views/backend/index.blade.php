@@ -24,9 +24,17 @@
 
             <div class="card">
                 <div class="card-body">
+                    <h5 class="card-title">Manage Category</h5>
+                    <a href="{{ action('Admin\CategoriesController@index') }}" class="btn btn-default">All Categories</a>
+                    <a href="{{ action('Admin\CategoriesController@create') }}" class="btn btn-primary">Create Category</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
                     <h5 class="card-title">Manage Post</h5>
-                    <a href="{{ route('admin.roles.index') }}" class="btn btn-default">All Post</a>
-                    <a href="{{ route('admin.roles.create') }}" class="btn btn-primary">Create Post</a>
+                    <a href="{{ action('Admin\PostsController@index') }}" class="btn btn-default">All Post</a>
+                    <a href="{{ action('Admin\PostsController@create') }}" class="btn btn-primary">Create Post</a>
                 </div>
             </div>
 
